@@ -8,7 +8,8 @@ export default new Vuex.Store({
   state: {
     isLogin: false,
     countries: [],
-    reports: []
+    reports: [],
+    newCountries: []
   },
   mutations: {
     SET_LOGIN (state, value) {
@@ -16,6 +17,9 @@ export default new Vuex.Store({
     },
     SET_COUNTRIES (state, value) {
       state.countries = value
+    },
+    SET_NEWCOUNTRIES (state, value) {
+      state.newCountries = value
     },
     SET_REPORTS (state, value) {
       state.reports = value
