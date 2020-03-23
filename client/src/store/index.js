@@ -44,6 +44,7 @@ export default new Vuex.Store({
       })
         .then(result => {
           context.commit('SET_COUNTRIES', result.data)
+          context.commit('SET_NEWCOUNTRIES', result.data)
         })
         .catch(err => {
           console.log(err)

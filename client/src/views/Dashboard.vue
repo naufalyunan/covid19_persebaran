@@ -35,7 +35,6 @@ export default {
       this.countries.forEach(el => {
         el.name = el.name.toLowerCase()
       })
-      // console.log(this.countries[0])
       const newCountries = this.countries.filter(el => {
         if (el.name.includes(val)) {
           return el.name
