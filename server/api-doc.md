@@ -1,6 +1,6 @@
 # covid19-cases-server
 
-​
+
 List of available endpoints:
 ​
 
@@ -51,7 +51,7 @@ Response:
 }
 ```
 
-​
+
 
 ### GET /countries
 
@@ -75,7 +75,7 @@ Response:
 ]
 ```
 
-​
+
 
 ### GET /reports
 
@@ -93,17 +93,13 @@ Response:
   ​
 
 ```json
-[
-  {
-    "name": "string",
-    "cases": "integer",
-    "deaths": "integer",
-    "recovered": "integer"
-  }
-]
+{
+	"cases": "integer",
+	"Country: ""
+}
 ```
 
-​
+
 
 ### POST /reports
 
@@ -123,7 +119,7 @@ Request:
 }
 ```
 
-​Response:
+Response:
 
 - status: 201
 - body:
@@ -136,7 +132,7 @@ Request:
     "report": "integer",
     "UserId": "integer",
     "CountryId": "integer",
-    "createdAt": "2020-03-17T12:00:56.894Z",
+    "createdAt": "2020-03-17T12d:00:56.894Z",
     "updatedAt": "2020-03-22T10:19:48.449Z",
     "Country": {
       "id": 89,
@@ -151,7 +147,7 @@ Request:
 }
 ```
 
-​
+
 
 ### DELETE /reports/:id
 
