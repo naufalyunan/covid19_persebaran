@@ -38,6 +38,10 @@ export default {
           this.username = ''
           this.password = ''
           this.$router.push({ name: 'Dashboard' })
+          this.$store.dispatch('notif', {
+            status: 'success',
+            message: 'signed in successfully'
+          } )
         })
         .catch(err => {
           console.log(err)

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
-
+import Swal from 'sweetalert2'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -101,6 +101,23 @@ export default new Vuex.Store({
           console.log(err.response.data)
           console.log(err)
         })
+    },
+    notif (context, payload) {
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        onOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+      Toast.fire({
+        icon: payload.status,
+        title: payload.message
+      })
     }
   },
   modules: {
