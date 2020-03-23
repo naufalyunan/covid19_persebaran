@@ -29,6 +29,6 @@ module.exports = {
       Example:
       return queryInterface.dropTable('users');
     */
-    return queryInteface.removeConstraint('Reports', 'CountryId_FK')
+    return queryInterface.removeConstraint('Reports', 'CountryId_FK')
   }
 };

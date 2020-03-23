@@ -2,7 +2,9 @@ const { Country } = require('./../models')
 
 class ControllerCountry {
 	static fetchAll (req, res, next) {
-		Country.findAll()
+		Country.findAll({
+			order: ['id']
+		})
 			.then(result => {
 				res.status(200).json(result)
 			})

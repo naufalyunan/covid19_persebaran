@@ -2,7 +2,12 @@ const { Report, Country } = require('./../models')
 
 class ControllerReport {
 	static fetchReports (req, res, next) {
-		Report.findAll()
+		Report.findAll({
+			where: {
+				UserId: req.decoded.id
+			},
+			include: [Country]
+		})
 			.then(result => {
 				res.status(200).json(result)
 			})
@@ -14,6 +19,7 @@ class ControllerReport {
 		let { CountryId, report } = req.body
 		CountryId = Number(CountryId)
 		report = Number(report)
+		console.log(req.body)
 		const UserId = req.decoded.id
 		let country = null
 		let caseId = null
@@ -75,9 +81,9 @@ class ControllerReport {
 				}
 			})
 			.catch(err => {
-				next(err)
+				// next(err)
 				// console.log(err)
-				// res.status(400).json(err)
+				res.status(400).json(err)
 			})
 	}
 
@@ -124,6 +130,13 @@ class ControllerReport {
 					country: result.dataValues,
 					report: 'Succesfully delete'
 				}
+				return Report.destroy({
+					where: {
+						id
+					}
+				})
+			})
+			.then(result => {
 				res.status(200).json(response)
 				console.log(response)
 			})
