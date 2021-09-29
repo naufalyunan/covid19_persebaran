@@ -1,4 +1,4 @@
-# Covid19 - Livecode 2 Phase 2
+# Covid19
 
 ​
 
