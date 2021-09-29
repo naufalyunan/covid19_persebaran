@@ -9,10 +9,11 @@ module.exports = {
       Example:
       return queryInterface.createTable('users', { id: Sequelize.INTEGER });
     */
-    return queryInterface.addConstraint('Users', ['username'], {
+    return queryInterface.addConstraint('Users', {
       type: 'unique',
+      fields: ['username'],
       name: 'username_unique'
-    });
+    })
   },
 
   down: (queryInterface, Sequelize) => {

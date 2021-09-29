@@ -41,7 +41,7 @@ export default {
           this.$store.dispatch('notif', {
             status: 'success',
             message: 'signed in successfully'
-          } )
+          })
         })
         .catch(err => {
           console.log(err)
